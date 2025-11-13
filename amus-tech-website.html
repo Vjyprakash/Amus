@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amus Technologies | Enabling Businesses Through Innovation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            opacity: 0.8;
+            border-bottom: 2px solid white;
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 5% 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Page Header (for sub-pages) */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 5% 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #667eea;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Industry Cards */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .industry-card {
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .industry-card:hover {
+            transform: translateX(10px);
+        }
+
+        .industry-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #764ba2;
+        }
+
+        .industry-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 5%;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .value-card p {
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #764ba2;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Career Cards */
+        .career-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .career-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .career-card:hover {
+            transform: translateX(10px);
+        }
+
+        .career-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .career-card h3 {
+            font-size: 1.5rem;
+            color: #764ba2;
+        }
+
+        .career-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .career-details {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 80px 5%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        /* Image Placeholder */
+        .img-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #667eea;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .two-column,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .services-grid,
+            .industries-grid,
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="navigateTo('home')">AMUS TECHNOLOGIES</div>
+            <ul class="nav-links">
+                <li><a onclick="navigateTo('home')" class="nav-link">Home</a></li>
+                <li><a onclick="navigateTo('about')" class="nav-link">About</a></li>
+                <li><a onclick="navigateTo('services')" class="nav-link">Services</a></li>
+                <li><a onclick="navigateTo('industries')" class="nav-link">Industries</a></li>
+                <li><a onclick="navigateTo('careers')" class="nav-link">Careers</a></li>
+                <li><a onclick="navigateTo('contact')" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <h1>Enabling Businesses Through Innovation & Excellence</h1>
+            <p>Transforming challenges into opportunities with cutting-edge technology solutions</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Welcome to Amus Technologies</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>Founded with a clear vision: to give businesses seamless access to the right expertise in a rapidly evolving digital world.</p>
+                    <p>Like innovation itself—dynamic, transformative, and powerful—we enable organizations to thrive in any environment by connecting them with skilled professionals and teams who drive real impact.</p>
+                </div>
+                <div class="img-placeholder">💡</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Digital Transformation</h3>
+                    <p>Modernize legacy systems, streamline operations, and embrace innovation to stay ahead in today's digital economy.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data & Analytics</h3>
+                    <p>Turn complex data into actionable insights through advanced analytics and intelligent automation.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cloud Solutions</h3>
+                    <p>Secure and scalable cloud solutions that improve agility and reduce costs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cybersecurity</h3>
+                    <p>Robust protection, compliance, and resilience against evolving digital threats.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="testimonial-content">
+                <p class="testimonial-text">"Thanks to Amus Technologies, I was able to transition into a role that perfectly matches my skills and aspirations. Their team guided me throughout the process, provided timely updates, and ensured I had the right resources to succeed."</p>
+                <p class="testimonial-author">Sarah Mitchell, Solutions Architect</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how we can help you achieve your goals</p>
+            <button class="cta-button" onclick="navigateTo('contact')">Get In Touch</button>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="page-header">
+            <h1>About Amus Technologies</h1>
+            <p>Innovation, Excellence, and Partnership at Our Core</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Our Story</h2>
+            <div class="two-column">
+                <div>
+                    <p>Founded with a clear vision to revolutionize how businesses access technology expertise, Amus Technologies has grown into a trusted partner for organizations worldwide.</p>
+                    <p>We believe in the power of innovation to transform businesses. Like the dynamic nature of technology itself, we continuously evolve to meet the changing needs of our clients.</p>
+                    <p>Our journey is marked by a relentless pursuit of excellence and a dedication to helping businesses thrive in the digital age.</p>
+                </div>
+                <div class="img-placeholder">🚀</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Our Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">👨‍💼</div>
+                    <h4>John Anderson</h4>
+                    <p>Chief Executive Officer</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">👩‍💼</div>
+                    <h4>Sarah Chen</h4>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h4>Michael Roberts</h4>
+                    <p>Chief Operations Officer</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">👩‍💻</div>
+                    <h4>Emily Davis</h4>
+                    <p>Chief Innovation Officer</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h2 style="text-align: center; margin-bottom: 3rem;">The Amus Way</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovative</h3>
+                    <p>We push boundaries and embrace new technologies to deliver solutions that transform businesses and drive growth.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Focused</h3>
+                    <p>We eliminate the noise. Our work is purposeful, strategic, and always aligned with your business goals.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Professional</h3>
+                    <p>We bring clarity, consistency, and excellence to every interaction, ensuring superior results every time.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Inclusive</h3>
+                    <p>Our solutions are adaptable and built with empathy — ensuring everyone benefits from innovation.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div class="page-header">
+            <h1>Our Services</h1>
+            <p>Comprehensive Solutions for Modern Business Challenges</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Digital Transformation</h2>
+            <div class="two-column">
+                <div>
+                    <p>We help businesses modernize legacy systems, streamline operations, and embrace innovation to stay ahead in today's digital economy.</p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Legacy System Modernization</li>
+                        <li>Process Automation</li>
+                        <li>Digital Strategy Consulting</li>
+                        <li>Change Management</li>
+                    </ul>
+                </div>
+                <div class="img-placeholder">🔄</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Data & Analytics</h2>
+            <div class="two-column">
+                <div class="img-placeholder">📊</div>
+                <div>
+                    <p>Work with experts who turn complex data into actionable insights through advanced analytics and intelligent automation.</p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Business Intelligence Solutions</li>
+                        <li>Predictive Analytics</li>
+                        <li>Machine Learning Implementation</li>
+                        <li>Data Warehousing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Cloud Solutions</h2>
+            <div class="two-column">
+                <div>
+                    <p>From migration to optimization, we deliver secure and scalable cloud solutions that improve agility and reduce costs.</p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Cloud Migration Services</li>
+                        <li>Multi-Cloud Strategy</li>
+                        <li>Cloud Infrastructure Management</li>
+                        <li>DevOps & CI/CD</li>
+                    </ul>
+                </div>
+                <div class="img-placeholder">☁️</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Cybersecurity</h2>
+            <div class="two-column">
+                <div class="img-placeholder">🔒</div>
+                <div>
+                    <p>Partner with specialists who ensure robust protection, compliance, and resilience against today's evolving digital threats.</p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Security Assessment & Audits</li>
+                        <li>Threat Detection & Response</li>
+                        <li>Compliance Management</li>
+                        <li>Security Training & Awareness</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Let's Discuss Your Project</h2>
+            <p>Our experts are ready to help you choose the right solution</p>
+            <button class="cta-button" onclick="navigateTo('contact')">Contact Us</button>
+        </section>
+    </div>
+
+    <!-- INDUSTRIES PAGE -->
+    <div id="industries" class="page">
+        <div class="page-header">
+            <h1>Industries We Serve</h1>
+            <p>Tailored Solutions Across Multiple Sectors</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Technology</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Empowering Tech Innovation</h3>
+                    <p>We help technology companies scale their infrastructure, accelerate development cycles, and innovate faster with cutting-edge solutions.</p>
+                    <p><strong>Key Solutions:</strong></p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Scalable Cloud Infrastructure</li>
+                        <li>Advanced Development Tools</li>
+                        <li>Automated Testing & Deployment</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="img-placeholder">💻</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Finance</h2>
+            <div class="two-column">
+                <div class="img-placeholder">💰</div>
+                <div>
+                    <h3>Secure Financial Technology</h3>
+                    <p>Secure, compliant, and scalable technology for banks and financial institutions to manage risk and accelerate digital adoption.</p>
+                    <p><strong>Key Solutions:</strong></p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Regulatory Compliance Systems</li>
+                        <li>Fraud Detection & Prevention</li>
+                        <li>Digital Banking Solutions</li>
+                        <li>Risk Management Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Healthcare</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Healthcare Innovation</h3>
+                    <p>Smart solutions for patient care, data security, and streamlined operations in a rapidly evolving healthcare ecosystem.</p>
+                    <p><strong>Key Solutions:</strong></p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Electronic Health Records (EHR)</li>
+                        <li>Telemedicine Platforms</li>
+                        <li>HIPAA Compliance Solutions</li>
+                        <li>Healthcare Analytics</li>
+                    </ul>
+                </div>
+                <div class="img-placeholder">🏥</div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Government</h2>
+            <div class="two-column">
+                <div class="img-placeholder">🏛️</div>
+                <div>
+                    <h3>Public Sector Digital Transformation</h3>
+                    <p>Assisting government organizations and agencies improve service delivery through technology, cybersecurity, and secure digital systems.</p>
+                    <p><strong>Key Solutions:</strong></p>
+                    <ul style="margin-left: 2rem; color: #666; line-height: 2;">
+                        <li>Citizen Services Portals</li>
+                        <li>Government Cloud Solutions</li>
+                        <li>Data Security & Privacy</li>
+                        <li>Digital Identity Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CAREERS PAGE -->
+    <div id="careers" class="page">
+        <div class="page-header">
+            <h1>Join Our Team</h1>
+            <p>Build Your Career with Amus Technologies</p>
+        </div>
+
+        <section class="content-section">
+            <h2>Why Work With Us?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎯 Meaningful Work</h3>
+                    <p>Work on challenging projects that make a real impact on businesses and communities worldwide.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🚀 Growth Opportunities</h3>
+                    <p>Continuous learning, professional development, and clear career advancement paths.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌟 Innovative Culture</h3>
+                    <p>Collaborative environment that encourages creativity, innovation, and fresh ideas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💼 Great Benefits</h3>
+                    <p>Competitive compensation, health insurance, flexible work arrangements, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2>Current Openings</h2>
+            <div class="career-grid">
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>Senior Cloud Architect</h3>
+                        <span class="career-badge">Full-Time</span>
+                    </div>
+                    <p class="career-details">📍 Remote | 💰 Competitive Salary | 📅 Posted: November 2025</p>
+                    <p>Lead cloud architecture initiatives for enterprise clients. Design and implement scalable, secure cloud solutions across AWS, Azure, and GCP platforms.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>Data Scientist</h3>
+                        <span class="career-badge">Full-Time</span>
+                    </div>
+                    <p class="career-details">📍 New York, NY | 💰 $120k - $160k | 📅 Posted: November 2025</p>
+                    <p>Build machine learning models and analytics solutions. Work with big data technologies to extract insights and drive business decisions.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>Cybersecurity Consultant</h3>
+                        <span class="career-badge">Full-Time</span>
+                    </div>
+                    <p class="career-details">📍 San Francisco, CA | 💰 $130k - $170k | 📅 Posted: November 2025</p>
+                    <p>Conduct security assessments, implement security frameworks, and help clients protect their digital assets from evolving threats.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>Full Stack Developer</h3>
+                        <span class="career-badge">Full-Time</span>
+                    </div>
+                    <p class="career-details">📍 Remote | 💰 $100k - $140k | 📅 Posted: November 2025</p>
+                    <p>Develop modern web applications using React, Node.js, and cloud technologies. Work on innovative projects for diverse clients.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>DevOps Engineer</h3>
+                        <span class="career-badge">Contract</span>
+                    </div>
+                    <p class="career-details">📍 Boston, MA | 💰 $110k - $150k | 📅 Posted: November 2025</p>
+                    <p>Build and maintain CI/CD pipelines, automate infrastructure, and ensure smooth deployment processes for client applications.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-header">
+                        <h3>Business Analyst</h3>
+                        <span class="career-badge">Full-Time</span>
+                    </div>
+                    <p class="career-details">📍 Chicago, IL | 💰 $90k - $120k | 📅 Posted: November 2025</p>
+                    <p>Bridge the gap between business needs and technical solutions. Gather requirements, analyze processes, and help drive digital transformation.</p>
+                    <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Don't See Your Role?</h2>
+            <p>We're always looking for talented people. Send us your resume!</p>
+            <button class="cta-button" onclick="navigateTo('contact')">Get In Touch</button>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Let's Start a Conversation</p>
+        </div>
+
+        <section class="content-section">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" placeholder="Your Company Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea placeholder="Tell us about your project or inquiry..." required></textarea>
+                    </div>
+                    <button class="submit-btn" onclick="alert('Thank you! Your message has been sent. We will contact you soon.')">Send Message</button>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📍 Our Office</h3>
+                        <p>123 Innovation Drive<br>
+                        Tech Park, Suite 500<br>
+                        San Francisco, CA 94105<br>
+                        United States</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📞 Phone</h3>
+                        <p>Main: +1 (555) 123-4567<br>
+                        Sales: +1 (555) 123-4568<br>
+                        Support: +1 (555) 123-4569</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>✉️ Email</h3>
+                        <p>General: info@amustechnologies.com<br>
+                        Sales: sales@amustechnologies.com<br>
+                        Careers: careers@amustechnologies.com<br>
+                        Support: support@amustechnologies.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🕐 Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM PST<br>
+                        Saturday: 10:00 AM - 2:00 PM PST<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Global Presence</h2>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <h3>🇺🇸 North America</h3>
+                    <p>San Francisco, CA (Headquarters)<br>New York, NY<br>Toronto, Canada</p>
+                </div>
+                <div class="industry-card">
+                    <h3>🇬🇧 Europe</h3>
+                    <p>London, United Kingdom<br>Berlin, Germany<br>Amsterdam, Netherlands</p>
+                </div>
+                <div class="industry-card">
+                    <h3>🇮🇳 Asia Pacific</h3>
+                    <p>Singapore<br>Mumbai, India<br>Sydney, Australia</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Amus Technologies. All rights reserved. | Enabling Businesses Through Innovation & Excellence</p>
+    </footer>
+
+    <script>
+        // Navigation System
+        function navigateTo(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Set home link as active on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.nav-links a').classList.add('active');
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        document.querySelectorAll('.service-card, .industry-card, .value-card, .team-member, .career-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
