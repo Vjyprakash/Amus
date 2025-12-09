@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Amus Technologies | Enabling Businesses Through Innovation</title>
     <style>
         * {
@@ -16,6 +16,7 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            transition: background-color 0.32s ease, color 0.32s ease;
         }
 
         /* Header */
@@ -36,6 +37,7 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            gap: 12px;
         }
 
         .logo {
@@ -43,6 +45,9 @@
             font-weight: bold;
             letter-spacing: 1px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-links {
@@ -63,6 +68,84 @@
         .nav-links a.active {
             opacity: 0.8;
             border-bottom: 2px solid white;
+        }
+
+        /* Theme toggle - placed near logo */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 8px;
+        }
+
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            opacity: 0.95;
+            transition: opacity 0.3s;
+            user-select: none;
+        }
+
+        .toggle-label.dim {
+            opacity: 0.45;
+        }
+
+        .toggle-switch {
+            --w: 70px;
+            --h: 32px;
+            --pad: 4px;
+            width: var(--w);
+            height: var(--h);
+            border-radius: 50px;
+            padding: var(--pad);
+            background: linear-gradient(135deg, #6ea3ff, #667eea);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s, box-shadow 0.3s;
+            position: relative;
+            box-shadow: 0 6px 18px rgba(99,126,255,0.12);
+        }
+
+        .toggle-switch:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(99,126,255,0.14), 0 6px 18px rgba(99,126,255,0.12);
+        }
+
+        .toggle-knob {
+            width: calc(var(--h) - var(--pad) * 2);
+            height: calc(var(--h) - var(--pad) * 2);
+            border-radius: 50%;
+            background: white;
+            transition: transform 0.32s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s;
+            box-shadow: 0 6px 12px rgba(46,60,120,0.12);
+            position: relative;
+        }
+
+        .toggle-knob::after,
+        .toggle-knob::before {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.06);
+        }
+        .toggle-knob::before {
+            width: 6px; height: 6px; right: 6px; top: 6px; opacity: 0.20;
+        }
+        .toggle-knob::after {
+            width: 10px; height: 10px; right: 12px; bottom: 6px; opacity: 0.08;
+        }
+
+        .toggle-switch.dark {
+            background: linear-gradient(135deg, #2b2f3b, #1e212a);
+            box-shadow: 0 6px 18px rgba(10,12,20,0.32);
+        }
+
+        .toggle-switch.dark .toggle-knob {
+            transform: translateX(calc(var(--w) - var(--h)));
+            box-shadow: 0 6px 16px rgba(0,0,0,0.35);
         }
 
         /* Page Container */
@@ -93,6 +176,7 @@
             padding: 150px 5% 100px;
             text-align: center;
             margin-top: 80px;
+            transition: background 0.32s;
         }
 
         .hero h1 {
@@ -113,6 +197,7 @@
             padding: 150px 5% 80px;
             text-align: center;
             margin-top: 80px;
+            transition: background 0.32s;
         }
 
         .page-header h1 {
@@ -130,6 +215,7 @@
             padding: 80px 5%;
             max-width: 1400px;
             margin: 0 auto;
+            transition: background 0.32s, color 0.32s;
         }
 
         .content-section h2 {
@@ -173,7 +259,7 @@
             padding: 2.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
         }
 
         .service-card:hover {
@@ -205,7 +291,7 @@
             padding: 2rem;
             border-radius: 10px;
             border-left: 4px solid #667eea;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s, color 0.3s;
         }
 
         .industry-card:hover {
@@ -271,7 +357,7 @@
             padding: 2rem;
             background: #f8f9fa;
             border-radius: 10px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s, color 0.3s;
         }
 
         .team-member:hover {
@@ -316,6 +402,7 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: background 0.3s, color 0.3s;
         }
 
         .form-group {
@@ -337,7 +424,7 @@
             border-radius: 5px;
             font-size: 1rem;
             font-family: inherit;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, background 0.3s, color 0.3s;
         }
 
         .form-group input:focus,
@@ -406,7 +493,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             border-left: 4px solid #667eea;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s, color 0.3s;
         }
 
         .career-card:hover {
@@ -458,6 +545,7 @@
             padding: 80px 5%;
             background: #f8f9fa;
             text-align: center;
+            transition: background 0.3s, color 0.3s;
         }
 
         .testimonial-content {
@@ -489,6 +577,7 @@
             color: white;
             padding: 80px 5%;
             text-align: center;
+            transition: background 0.3s;
         }
 
         .cta-section h2 {
@@ -527,21 +616,21 @@
             color: white;
             padding: 2rem 5%;
             text-align: center;
+            transition: background 0.3s, color 0.3s;
         }
 
-.img-placeholder {
-    width: 100%;
-    height: 500%; /* or 600px */
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.img-placeholder img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;   /* or contain */
-}
-
+        /* Image Placeholder */
+        .img-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #667eea;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -569,13 +658,73 @@
             .team-grid {
                 grid-template-columns: 1fr;
             }
+
+            nav {
+                gap: 8px;
+            }
+
+            .theme-toggle {
+                display: none; /* hide on very small screens to keep header compact */
+            }
         }
+
+        /* ---------- DARK MODE GLOBAL COLORS ---------- */
+        [data-theme="dark"] body {
+            background: #0f1116;
+            color: #e6eefc;
+        }
+
+        [data-theme="dark"] .content-section,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .industry-card,
+        [data-theme="dark"] .career-card,
+        [data-theme="dark"] .contact-form,
+        [data-theme="dark"] .testimonial-content {
+            background: #1f2430;
+            color: #dbe7ff;
+        }
+
+        [data-theme="dark"] .hero,
+        [data-theme="dark"] .page-header,
+        [data-theme="dark"] header {
+            background: linear-gradient(135deg, #232533, #1a1c24);
+        }
+
+        [data-theme="dark"] .nav-links a {
+            color: white !important;
+        }
+
+        [data-theme="dark"] .team-member {
+            background: #232733;
+        }
+
+        [data-theme="dark"] .logo {
+            color: white;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo" onclick="navigateTo('home')">AMUS TECHNOLOGIES</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <!-- Toggle First -->
+                
+
+                <div class="logo" onclick="navigateTo('home')">AMUS TECHNOLOGIES</div>
+
+                <!-- THEME TOGGLE INSERTED HERE -->
+                <div class="theme-toggle" aria-hidden="false">
+                    
+
+                    <button id="themeSwitch" class="toggle-switch" type="button" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
+                        <span class="toggle-knob" aria-hidden="true"></span>
+                    </button>
+
+                    
+                </div>
+            </div>
+
             <ul class="nav-links">
                 <li><a onclick="navigateTo('home')" class="nav-link">Home</a></li>
                 <li><a onclick="navigateTo('about')" class="nav-link">About</a></li>
@@ -603,8 +752,8 @@
                     <p>Like innovation itself—dynamic, transformative, and powerful—we enable organizations to thrive in any environment by connecting them with skilled professionals and teams who drive real impact.</p>
                 </div>
                 <div class="img-placeholder">
-    <img src="urvi.jpg" alt="Professional Image" />
-</div>
+                    <img src="urvi.jpg" alt="Professional Image" style="max-width:100%; height:auto; border-radius:10px;" / style="max-width:60%; height:auto; border-radius:10px;">
+                </div>
 
             </div>
         </section>
@@ -1078,7 +1227,10 @@
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
-            event.target.classList.add('active');
+            // event may be undefined when called programmatically; guard it
+            try {
+                event.target.classList.add('active');
+            } catch (e) {}
 
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1086,7 +1238,8 @@
 
         // Set home link as active on load
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.nav-links a').classList.add('active');
+            const firstNav = document.querySelector('.nav-links a');
+            if(firstNav) firstNav.classList.add('active');
         });
 
         // Animation on scroll
@@ -1111,6 +1264,56 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+    </script>
+
+    <!-- THEME TOGGLE SCRIPT -->
+    <script>
+    (function() {
+        const btn = document.getElementById('themeSwitch');
+        const lightLab = document.getElementById('lightLabel');
+        const darkLab = document.getElementById('darkLabel');
+        const STORAGE_KEY = "amus_theme";
+
+        function applyTheme(mode) {
+            const html = document.documentElement;
+
+            if (mode === "dark") {
+                html.setAttribute("data-theme", "dark");
+                btn.classList.add("dark");
+                lightLab.classList.add("dim");
+                darkLab.classList.remove("dim");
+            } else {
+                html.setAttribute("data-theme", "light");
+                btn.classList.remove("dark");
+                darkLab.classList.add("dim");
+                lightLab.classList.remove("dim");
+            }
+        }
+
+        const stored = localStorage.getItem(STORAGE_KEY);
+
+        if (stored) {
+            applyTheme(stored);
+        } else {
+            const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            applyTheme(prefersDark ? "dark" : "light");
+        }
+
+        btn.addEventListener("click", () => {
+            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            const newTheme = isDark ? "light" : "dark";
+            applyTheme(newTheme);
+            localStorage.setItem(STORAGE_KEY, newTheme);
+        });
+
+        // keyboard accessibility
+        btn.addEventListener('keydown', function(e){
+            if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+    })();
     </script>
 </body>
 </html>
