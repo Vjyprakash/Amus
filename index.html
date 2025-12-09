@@ -246,6 +246,24 @@
             margin-bottom: 3rem;
         }
 
+        /* Image Placeholder FIX */
+        .img-placeholder {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .img-placeholder img {
+            width: 350px; /* Option A: 350px width */
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Services Grid */
         .services-grid {
             display: grid;
@@ -619,19 +637,6 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        /* Image Placeholder */
-        .img-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #667eea;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -709,19 +714,19 @@
         <nav>
             <div style="display:flex; align-items:center; gap:8px;">
                 <!-- Toggle First -->
-                
+
 
                 <div class="logo" onclick="navigateTo('home')">AMUS TECHNOLOGIES</div>
 
                 <!-- THEME TOGGLE INSERTED HERE -->
                 <div class="theme-toggle" aria-hidden="false">
-                    
+
 
                     <button id="themeSwitch" class="toggle-switch" type="button" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
                         <span class="toggle-knob" aria-hidden="true"></span>
                     </button>
 
-                    
+
                 </div>
             </div>
 
@@ -752,7 +757,7 @@
                     <p>Like innovation itself—dynamic, transformative, and powerful—we enable organizations to thrive in any environment by connecting them with skilled professionals and teams who drive real impact.</p>
                 </div>
                 <div class="img-placeholder">
-                    <img src="urvi.jpg" alt="Professional Image" style="max-width:100%; height:auto; border-radius:10px;" / style="max-width:60%; height:auto; border-radius:10px;">
+                    <img src="urvi.jpg" alt="Professional Image" />
                 </div>
 
             </div>
@@ -1057,7 +1062,7 @@
                         <h3>Senior Cloud Architect</h3>
                         <span class="career-badge">Full-Time</span>
                     </div>
-                    <p class="career-details">📍 Remote | 💰 Competitive Salary | 📅 Posted: November 2025</p>
+                    <p class="career-details">📍 Remote | �💰 Competitive Salary | 📅 Posted: November 2025</p>
                     <p>Lead cloud architecture initiatives for enterprise clients. Design and implement scalable, secure cloud solutions across AWS, Azure, and GCP platforms.</p>
                     <button class="apply-btn" onclick="alert('Application form would open here')">Apply Now</button>
                 </div>
@@ -1270,8 +1275,6 @@
     <script>
     (function() {
         const btn = document.getElementById('themeSwitch');
-        const lightLab = document.getElementById('lightLabel');
-        const darkLab = document.getElementById('darkLabel');
         const STORAGE_KEY = "amus_theme";
 
         function applyTheme(mode) {
@@ -1280,13 +1283,9 @@
             if (mode === "dark") {
                 html.setAttribute("data-theme", "dark");
                 btn.classList.add("dark");
-                lightLab.classList.add("dim");
-                darkLab.classList.remove("dim");
             } else {
                 html.setAttribute("data-theme", "light");
                 btn.classList.remove("dark");
-                darkLab.classList.add("dim");
-                lightLab.classList.remove("dim");
             }
         }
 
