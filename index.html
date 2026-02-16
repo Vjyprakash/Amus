@@ -12,23 +12,23 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1f2937;
             overflow-x: hidden;
             transition: background-color 0.32s ease, color 0.32s ease;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: white;
             padding: 1.5rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
         }
 
         nav {
@@ -99,19 +99,19 @@
             height: var(--h);
             border-radius: 50px;
             padding: var(--pad);
-            background: linear-gradient(135deg, #6ea3ff, #667eea);
+            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             transition: background 0.3s, box-shadow 0.3s;
             position: relative;
-            box-shadow: 0 6px 18px rgba(99,126,255,0.12);
+            box-shadow: 0 6px 18px rgba(30, 58, 138, 0.15);
         }
 
         .toggle-switch:focus {
             outline: none;
-            box-shadow: 0 0 0 4px rgba(99,126,255,0.14), 0 6px 18px rgba(99,126,255,0.12);
+            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15), 0 6px 18px rgba(30, 58, 138, 0.15);
         }
 
         .toggle-knob {
@@ -171,7 +171,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
             color: white;
             padding: 150px 5% 100px;
             text-align: center;
@@ -192,7 +192,7 @@
 
         /* Page Header (for sub-pages) */
         .page-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
             color: white;
             padding: 150px 5% 80px;
             text-align: center;
@@ -221,19 +221,19 @@
         .content-section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #667eea;
+            color: #1e40af;
         }
 
         .content-section h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .content-section p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            color: #666;
+            color: #4b5563;
             line-height: 1.8;
         }
 
@@ -275,24 +275,25 @@
         .service-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            border-top: 4px solid #1e40af;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(30, 64, 175, 0.15);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .service-card p {
-            color: #666;
+            color: #4b5563;
             line-height: 1.8;
         }
 
@@ -305,31 +306,32 @@
         }
 
         .industry-card {
-            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
             padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            border-left: 4px solid #1e40af;
             transition: transform 0.3s, background 0.3s, color 0.3s;
         }
 
         .industry-card:hover {
-            transform: translateX(10px);
+            transform: translateX(8px);
+            background: linear-gradient(135deg, #bfdbfe 0%, #dbeafe 100%);
         }
 
         .industry-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .industry-card p {
-            color: #666;
+            color: #4b5563;
             line-height: 1.7;
         }
 
         /* Values Section */
         .values-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
             color: white;
             padding: 80px 5%;
         }
@@ -373,19 +375,21 @@
         .team-member {
             text-align: center;
             padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 10px;
+            background: #f0f9ff;
+            border-radius: 12px;
             transition: transform 0.3s, background 0.3s, color 0.3s;
+            border: 1px solid #bfdbfe;
         }
 
         .team-member:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            background: #e0f2fe;
         }
 
         .team-avatar {
             width: 120px;
             height: 120px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             border-radius: 50%;
             margin: 0 auto 1rem;
             display: flex;
@@ -398,11 +402,11 @@
         .team-member h4 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .team-member p {
-            color: #666;
+            color: #4b5563;
             font-size: 1rem;
         }
 
@@ -418,9 +422,10 @@
         .contact-form {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             transition: background 0.3s, color 0.3s;
+            border-top: 4px solid #1e40af;
         }
 
         .form-group {
@@ -430,7 +435,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: #1f2937;
             font-weight: 500;
         }
 
@@ -438,8 +443,8 @@
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
             transition: border-color 0.3s, background 0.3s, color 0.3s;
@@ -448,7 +453,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #1e40af;
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
         }
 
         .form-group textarea {
@@ -457,11 +463,11 @@
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
             padding: 1rem 2.5rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -469,8 +475,8 @@
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.25);
         }
 
         /* Contact Info */
@@ -481,20 +487,20 @@
         }
 
         .info-card {
-            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
             padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            border-left: 4px solid #1e40af;
         }
 
         .info-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .info-card p {
-            color: #666;
+            color: #4b5563;
             line-height: 1.7;
         }
 
@@ -508,14 +514,15 @@
         .career-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #1e40af;
             transition: transform 0.3s, background 0.3s, color 0.3s;
         }
 
         .career-card:hover {
-            transform: translateX(10px);
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.15);
         }
 
         .career-header {
@@ -527,41 +534,42 @@
 
         .career-card h3 {
             font-size: 1.5rem;
-            color: #764ba2;
+            color: #1e3a8a;
         }
 
         .career-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 0.9rem;
         }
 
         .career-details {
-            color: #666;
+            color: #4b5563;
             margin-bottom: 1rem;
         }
 
         .apply-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
             padding: 0.8rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .apply-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.2);
         }
 
         /* Testimonial Section */
         .testimonial-section {
             padding: 80px 5%;
-            background: #f8f9fa;
+            background: #f0f9ff;
             text-align: center;
             transition: background 0.3s, color 0.3s;
         }
@@ -571,27 +579,28 @@
             margin: 0 auto;
             background: white;
             padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #1e40af;
         }
 
         .testimonial-text {
             font-size: 1.3rem;
             font-style: italic;
-            color: #666;
+            color: #4b5563;
             margin-bottom: 2rem;
             line-height: 1.8;
         }
 
         .testimonial-author {
             font-weight: bold;
-            color: #667eea;
+            color: #1e3a8a;
             font-size: 1.1rem;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
             padding: 80px 5%;
             text-align: center;
@@ -612,9 +621,9 @@
         .cta-button {
             display: inline-block;
             background: white;
-            color: #667eea;
+            color: #1e3a8a;
             padding: 1rem 3rem;
-            border-radius: 50px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
@@ -624,13 +633,13 @@
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
         }
 
         /* Footer */
         footer {
-            background: #2d3748;
+            background: #0f172a;
             color: white;
             padding: 2rem 5%;
             text-align: center;
@@ -685,14 +694,14 @@
         [data-theme="dark"] .career-card,
         [data-theme="dark"] .contact-form,
         [data-theme="dark"] .testimonial-content {
-            background: #1f2430;
-            color: #dbe7ff;
+            background: #1f2937;
+            color: #e5e7eb;
         }
 
         [data-theme="dark"] .hero,
         [data-theme="dark"] .page-header,
         [data-theme="dark"] header {
-            background: linear-gradient(135deg, #232533, #1a1c24);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
         }
 
         [data-theme="dark"] .nav-links a {
@@ -700,11 +709,268 @@
         }
 
         [data-theme="dark"] .team-member {
-            background: #232733;
+            background: #1f2937;
         }
 
         [data-theme="dark"] .logo {
             color: white;
+        }
+
+        /* ===== VIBE CODING ANIMATIONS ===== */
+        
+        /* Gradient animation for headers */
+        @keyframes gradientShift {
+            0% {
+                background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 50%, #1e40af 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, #1e40af 0%, #0c4a6e 50%, #1e3a8a 100%);
+            }
+        }
+
+        .hero, .page-header {
+            animation: gradientShift 8s ease infinite;
+        }
+
+        /* Smooth glow effect on buttons */
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(30, 64, 175, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(30, 64, 175, 0.8), 0 0 40px rgba(30, 64, 175, 0.4);
+            }
+        }
+
+        .submit-btn:hover,
+        .apply-btn:hover,
+        .cta-button:hover {
+            animation: glowPulse 2s ease-in-out;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .img-placeholder img {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Card entrance animation */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .industry-card,
+        .career-card,
+        .team-member {
+            animation: slideInUp 0.6s ease-out backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Hover lift effect on cards */
+        @keyframes liftCard {
+            to {
+                transform: translateY(-12px);
+                box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+            }
+        }
+
+        .service-card:hover {
+            animation: liftCard 0.4s ease-out forwards;
+        }
+
+        /* Text glow effect */
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(30, 64, 175, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(30, 64, 175, 0.6);
+            }
+        }
+
+        .hero h1, .page-header h1 {
+            animation: textGlow 4s ease-in-out infinite;
+        }
+
+        /* Smooth icon rotation on hover */
+        @keyframes spinIcon {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .service-card .icon {
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card:hover .icon {
+            animation: spinIcon 0.6s ease-in-out;
+        }
+
+        /* Ripple effect on button click */
+        @keyframes ripple {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        .submit-btn, .apply-btn, .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before, .apply-btn::before, .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Smooth underline animation for nav links */
+        @keyframes underlineSlide {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .nav-links a {
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Neon glow effect on focus */
+        @keyframes neonGlow {
+            0%, 100% {
+                box-shadow: 0 0 5px #1e40af, 0 0 10px #1e40af;
+            }
+            50% {
+                box-shadow: 0 0 10px #3b82f6, 0 0 20px #1e40af, 0 0 30px #1e40af;
+            }
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            animation: neonGlow 2s ease-in-out;
+        }
+
+        /* Smooth background transition on section hover */
+        .content-section {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        /* Scroll reveal animation */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .value-card {
+            animation: fadeInScale 0.6s ease-out backwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Hover scale for team members */
+        .team-member {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .team-avatar {
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-avatar {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        /* Smooth fade for page transitions */
+        .page {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Parallax text effect */
+        .hero h1 {
+            letter-spacing: 2px;
+            font-weight: 800;
+            transition: letter-spacing 0.3s ease;
+        }
+
+        .hero:hover h1 {
+            letter-spacing: 4px;
         }
 
     </style>
@@ -763,7 +1029,7 @@
             </div>
         </section>
 
-        <section class="content-section" style="background:#f8f9fa; padding:80px 5%;">
+        <section class="content-section" style="background:#f0f9ff; padding:80px 5%;">
     <h2>Our Recruitment Services</h2>
 
     <div class="services-grid">
@@ -1247,7 +1513,7 @@
 
                     <div class="info-card">
                         <h3>✉️ Email</h3>
-                        <p>General: hr@amustechnologies.com<br></p>
+                        <p>General: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce4feccede1f9fff8e9efe4e2e3e0e3ebe5e9ffa2efe3e1">[email&#160;protected]</a><br></p>
                     </div>
 
                     <div class="info-card">
@@ -1282,7 +1548,7 @@
         <p>&copy; 2025 Amus Technologies. All rights reserved. | Enabling Businesses Through Innovation & Excellence</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navigation System
         function navigateTo(pageId) {
             // Hide all pages
@@ -1371,13 +1637,149 @@
         });
 
         // keyboard accessibility
-        btn.addEventListener('keydown', function(e){
-            if(e.key === 'Enter' || e.key === ' ') {
+        btn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
                 btn.click();
             }
         });
     })();
     </script>
-</body>
-</html>
+
+    <!-- VIBE CODING INTERACTIONS -->
+    <script>
+        // Ripple effect on buttons
+        document.querySelectorAll('.submit-btn, .apply-btn, .cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                // Clean up
+                setTimeout(() => ripple && ripple.remove(), 600);
+            });
+        });
+
+        // Mouse follow effect on hero section
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                hero.style.background = `linear-gradient(135deg, hsl(${210 + mouseX * 20}, 80%, 35%) 0%, hsl(${220 + mouseY * 20}, 75%, 40%) 50%, hsl(${200 + mouseX * 10}, 85%, 25%) 100%)`;
+            });
+        }
+
+        // Smooth scroll behavior for nav links
+        document.querySelectorAll('a[onclick*="navigateTo"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                this.style.opacity = '0.7';
+                setTimeout(() => {
+                    this.style.opacity = '1';
+                }, 300);
+            });
+        });
+
+        // Keyboard key press animations
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Easter egg: Press Esc for a fun effect
+                document.body.style.filter = 'hue-rotate(360deg)';
+                setTimeout(() => {
+                    document.body.style.filter = 'hue-rotate(0deg)';
+                }, 1000);
+            }
+        });
+
+        // Smooth reveal on scroll
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply scroll reveal to sections
+        document.querySelectorAll('.content-section, .values-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            scrollObserver.observe(section);
+        });
+
+        // Interactive button hover with color shift
+        document.querySelectorAll('.submit-btn, .apply-btn, .cta-button').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Card tilt effect on hover
+        document.querySelectorAll('.service-card, .industry-card, .career-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const rotateX = (y - rect.height / 2) / 10;
+                const rotateY = -(x - rect.width / 2) / 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Cursor tracking for form inputs
+        document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.01)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Floating animation trigger on page load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.img-placeholder img').forEach(img => {
+                img.style.animation = 'float 3s ease-in-out infinite';
+            });
+        });
+
+        // Header color change on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const header = document.querySelector('header');
+            
+            if (scrollTop > 100) {
+                header.style.boxShadow = '0 8px 30px rgba(15, 23, 42, 0.3)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.15)';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
