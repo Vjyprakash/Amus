@@ -758,6 +758,27 @@
             border-left: 4px solid #3b82f6;
         }
 
+        [data-theme="dark"] .contact-form h2,
+        [data-theme="dark"] .testimonial-content h2 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .form-group label {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea {
+            background: #0f172a;
+            color: #e5e7eb;
+            border-color: #3b82f6;
+        }
+
+        [data-theme="dark"] .form-group input::placeholder,
+        [data-theme="dark"] .form-group textarea::placeholder {
+            color: #9ca3af;
+        }
+
         [data-theme="dark"] .industry-card h3,
         [data-theme="dark"] .career-card h3 {
             color: #60a5fa;
@@ -785,11 +806,107 @@
         }
 
         [data-theme="dark"] .team-member {
-            background: #1f2937;
+            background: #1e2d4a;
+            border: 1px solid #2a4a7a;
+        }
+
+        [data-theme="dark"] .team-member h4 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .team-member p {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .team-member:hover {
+            background: #2a3d5a;
         }
 
         [data-theme="dark"] .logo {
             color: white;
+        }
+
+        /* Dark mode for service cards */
+        [data-theme="dark"] .service-card {
+            background: #1e2d4a;
+            border-top-color: #3b82f6;
+        }
+
+        [data-theme="dark"] .service-card h3 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .service-card p,
+        [data-theme="dark"] .service-card li {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .service-card:hover {
+            background: #2a3d5a;
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Dark mode for info cards */
+        [data-theme="dark"] .info-card {
+            background: #1e2d4a;
+            border-left-color: #3b82f6;
+        }
+
+        [data-theme="dark"] .info-card h3 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .info-card p {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .info-card a {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .info-card a:hover {
+            color: #93c5fd;
+        }
+
+        /* Dark mode for testimonial text */
+        [data-theme="dark"] .testimonial-text {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .testimonial-author {
+            color: #60a5fa;
+        }
+
+        /* Dark mode for value cards */
+        [data-theme="dark"] .value-card {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        [data-theme="dark"] .value-card h3 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .value-card p {
+            color: #d1d5db;
+        }
+
+        /* Dark mode for lists */
+        [data-theme="dark"] ul li {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .content-section h2 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .content-section h3 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .content-section p,
+        [data-theme="dark"] .content-section strong {
+            color: #d1d5db;
         }
 
         /* ===== VIBE CODING ANIMATIONS ===== */
@@ -1049,7 +1166,185 @@
             letter-spacing: 4px;
         }
 
-        /* ===== THEME TOGGLE VIBE ANIMATIONS ===== */
+        /* ===== HEADER VIBE CODING ANIMATIONS ===== */
+
+        /* Logo hover glow effect */
+        @keyframes logoGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(30, 64, 175, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 25px rgba(59, 130, 246, 0.8), 0 0 40px rgba(30, 64, 175, 0.5);
+                transform: scale(1.05);
+            }
+        }
+
+        .logo:hover {
+            animation: logoGlow 0.8s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Smooth underline for nav links with gradient */
+        @keyframes navUnderlineGradient {
+            0% {
+                width: 0;
+                background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            }
+            100% {
+                width: 100%;
+                background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            }
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            animation: navUnderlineGradient 0.4s ease-out forwards;
+        }
+
+        /* Active nav link glow */
+        .nav-links a.active {
+            position: relative;
+        }
+
+        .nav-links a.active::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+            animation: activeLinkGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes activeLinkGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 1);
+            }
+        }
+
+        /* Header background animation on hover */
+        @keyframes headerBackgroundShift {
+            0% {
+                background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            }
+        }
+
+        header:hover {
+            animation: headerBackgroundShift 0.8s ease-in-out;
+        }
+
+        /* Logo letter spacing animation */
+        .logo {
+            transition: letter-spacing 0.3s ease;
+        }
+
+        .logo:hover {
+            letter-spacing: 3px;
+        }
+
+        /* Nav link hover scale and color */
+        .nav-links a {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-3px);
+            color: #60a5fa;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Header shadow enhancement on scroll */
+        header.scrolled {
+            box-shadow: 0 8px 40px rgba(15, 23, 42, 0.3);
+        }
+
+        /* Toggle button enhanced glow on hover */
+        .toggle-switch:hover {
+            box-shadow: 0 0 20px rgba(30, 64, 175, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Floating animation for header */
+        @keyframes headerFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+
+        header {
+            animation: headerFloat 3s ease-in-out infinite;
+        }
+
+        /* Rainbow gradient effect on nav hover */
+        @keyframes rainbowBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+            background-size: 200% 100%;
+            animation: rainbowBorder 2s ease infinite;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin: -0.5rem -1rem;
+        }
+
+        /* Logo click pulse effect */
+        @keyframes logoPulse {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+        }
+
+        .logo.pulsing {
+            animation: logoPulse 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
         /* Spin animation on toggle click */
         @keyframes spinToggle {
@@ -1418,8 +1713,8 @@
                 </div>
                 <div class="team-member">
                     <div class="team-avatar">👩‍💻</div>
-                    <h4>Ayesha Hadi</h4>
-                    <p>Client Innovation Partner</p>
+                    <h4>Emily Davis</h4>
+                    <p>Chief Innovation Officer</p>
                 </div>
             </div>
         </section>
@@ -1756,7 +2051,7 @@
 
                     <div class="info-card">
                         <h3>✉️ Email</h3>
-                        <p>General: <a href="mailto:hr@amustechnologies.com">hr@amustechnologies.com</a><br></p>
+                        <p>General: <a href="/cdn-cgi/l/email-protection#51392311303c2422253432393f3e3d3e363834227f323e3c"><span class="__cf_email__" data-cfemail="2c445e6c4d41595f58494f44424340434b45495f024f4341">[email&#160;protected]</span></a><br></p>
                     </div>
 
                     <div class="info-card">
@@ -1791,7 +2086,7 @@
         <p>&copy; 2025 Amus Technologies. All rights reserved. | Enabling Businesses Through Innovation & Excellence</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navigation System
         function navigateTo(pageId) {
             // Hide all pages
@@ -2091,11 +2386,46 @@
             const header = document.querySelector('header');
             
             if (scrollTop > 100) {
-                header.style.boxShadow = '0 8px 30px rgba(15, 23, 42, 0.3)';
+                header.classList.add('scrolled');
+                header.style.boxShadow = '0 8px 40px rgba(15, 23, 42, 0.3)';
             } else {
+                header.classList.remove('scrolled');
                 header.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.15)';
             }
 
             lastScrollTop = scrollTop;
         });
+
+        // Logo click pulse effect
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.addEventListener('click', function() {
+                this.classList.add('pulsing');
+                setTimeout(() => this.classList.remove('pulsing'), 600);
+            });
+        }
+
+        // Nav link interaction effects
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                // Create a subtle glow effect
+                this.style.filter = 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))';
+            });
+
+            link.addEventListener('mouseleave', function() {
+                this.style.filter = 'drop-shadow(0 0 0px rgba(59, 130, 246, 0))';
+            });
+        });
+
+        // Header background glow on hover
+        const header = document.querySelector('header');
+        if (header) {
+            header.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.05)';
+            });
+
+            header.addEventListener('mouseleave', function() {
+                this.style.filter = 'brightness(1)';
+            });
+        }
     </script>
