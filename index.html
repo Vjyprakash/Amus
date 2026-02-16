@@ -329,6 +329,45 @@
             line-height: 1.7;
         }
 
+        /* Global Presence Cards - Enhanced Styling */
+        .content-section[style*="f0f9ff"] .industry-card {
+            background: linear-gradient(135deg, #ffffff 0%, #dbeafe 100%);
+            border-left: 4px solid #1e40af;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.1);
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card h3 {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card p {
+            color: #2d3e4f;
+            font-weight: 500;
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card:hover {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.2);
+        }
+
+        /* Animation for Global Presence cards */
+        .content-section[style*="f0f9ff"] .industry-card {
+            animation: slideInUp 0.6s ease-out backwards;
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .content-section[style*="f0f9ff"] .industry-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
         /* Values Section */
         .values-section {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0c4a6e 100%);
@@ -491,6 +530,13 @@
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #1e40af;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, #bfdbfe 0%, #dbeafe 100%);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.15);
         }
 
         .info-card h3 {
@@ -502,6 +548,19 @@
         .info-card p {
             color: #4b5563;
             line-height: 1.7;
+        }
+
+        .info-card a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .info-card a:hover {
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e40af;
         }
 
         /* Career Cards */
@@ -694,8 +753,25 @@
         [data-theme="dark"] .career-card,
         [data-theme="dark"] .contact-form,
         [data-theme="dark"] .testimonial-content {
-            background: #1f2937;
+            background: #1e2d4a;
             color: #e5e7eb;
+            border-left: 4px solid #3b82f6;
+        }
+
+        [data-theme="dark"] .industry-card h3,
+        [data-theme="dark"] .career-card h3 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .industry-card p,
+        [data-theme="dark"] .career-card p {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .industry-card:hover,
+        [data-theme="dark"] .career-card:hover {
+            background: #2a3d5a;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
         }
 
         [data-theme="dark"] .hero,
@@ -973,6 +1049,173 @@
             letter-spacing: 4px;
         }
 
+        /* ===== THEME TOGGLE VIBE ANIMATIONS ===== */
+
+        /* Spin animation on toggle click */
+        @keyframes spinToggle {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.1);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .toggle-switch.active-animation {
+            animation: spinToggle 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Pulse glow on toggle */
+        @keyframes toggleGlow {
+            0% {
+                box-shadow: 0 0 5px rgba(30, 64, 175, 0.4), 0 0 10px rgba(30, 64, 175, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(30, 64, 175, 0.8), 0 0 30px rgba(30, 64, 175, 0.5), 0 0 40px rgba(30, 64, 175, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(30, 64, 175, 0.4), 0 0 10px rgba(30, 64, 175, 0.2);
+            }
+        }
+
+        .toggle-switch:active {
+            animation: toggleGlow 0.6s ease-in-out;
+        }
+
+        /* Knob bounce effect */
+        @keyframes knobBounce {
+            0%, 100% {
+                transform: translateX(0) scale(1);
+            }
+            25% {
+                transform: translateX(-3px) scale(1.1);
+            }
+            50% {
+                transform: translateX(0) scale(1.05);
+            }
+            75% {
+                transform: translateX(3px) scale(1.1);
+            }
+        }
+
+        .toggle-knob.bouncing {
+            animation: knobBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Theme label pulse effect */
+        @keyframes labelPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+
+        .toggle-label.active {
+            animation: labelPulse 0.4s ease-in-out;
+        }
+
+        /* Ripple effect from toggle button */
+        @keyframes toggleRipple {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+                left: 50%;
+                top: 50%;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+                left: -100px;
+                top: -100px;
+            }
+        }
+
+        .toggle-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(30, 64, 175, 0.3);
+            pointer-events: none;
+            animation: toggleRipple 0.6s ease-out;
+        }
+
+        /* Light/Dark mode icon animation */
+        @keyframes iconFlip {
+            0% {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                transform: rotateY(360deg);
+                opacity: 1;
+            }
+        }
+
+        .toggle-knob::before {
+            animation: iconFlip 0.6s ease-in-out;
+        }
+
+        /* Header shine effect on toggle */
+        @keyframes headerShine {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        header.theme-changing {
+            animation: headerShine 0.8s ease-in-out;
+            background-size: 200% 100%;
+        }
+
+        /* Color transition on body background */
+        @keyframes bodyColorTransition {
+            0% {
+                background-color: #ffffff;
+            }
+            50% {
+                background-color: #f0f9ff;
+            }
+            100% {
+                background-color: #0f172a;
+            }
+        }
+
+        body.transitioning {
+            animation: bodyColorTransition 0.8s ease-in-out;
+        }
+
+        /* Floating particles effect on toggle */
+        @keyframes floatParticle {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .toggle-particle {
+            position: fixed;
+            pointer-events: none;
+            animation: floatParticle 0.8s ease-out forwards;
+        }
+
     </style>
 </head>
 <body>
@@ -1175,7 +1418,7 @@
                 </div>
                 <div class="team-member">
                     <div class="team-avatar">👩‍💻</div>
-                    <h4>Ayesha Hadi</h4>
+                    <h4>Emily Davis</h4>
                     <p>Chief Innovation Officer</p>
                 </div>
             </div>
@@ -1513,20 +1756,20 @@
 
                     <div class="info-card">
                         <h3>✉️ Email</h3>
-                        <p>General: <a href= hr@amustechnologies.com </a><br></p>
+                        <p>General: <a href="mailto:hr@amustechnologies.com">hr@amustechnologies.com</a><br></p>
                     </div>
 
                     <div class="info-card">
                         <h3>🕐 Business Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM <br>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM PST<br>
                         Saturday - Sunday: Closed</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section" style="background: #f8f9fa; padding: 80px 5%;">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Global Presence</h2>
+        <section class="content-section" style="background: #f0f9ff; padding: 80px 5%;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #1e40af;">Global Presence</h2>
             <div class="industries-grid">
                 <div class="industry-card">
                     <h3>🇺🇸 North America</h3>
@@ -1634,7 +1877,80 @@
             const newTheme = isDark ? "light" : "dark";
             applyTheme(newTheme);
             localStorage.setItem(STORAGE_KEY, newTheme);
+
+            // ===== VIBE CODING ANIMATIONS ON TOGGLE =====
+            
+            // 1. Add spin animation to toggle button
+            btn.classList.add('active-animation');
+            setTimeout(() => btn.classList.remove('active-animation'), 600);
+
+            // 2. Add bounce to knob
+            const knob = btn.querySelector('.toggle-knob');
+            if (knob) {
+                knob.classList.add('bouncing');
+                setTimeout(() => knob.classList.remove('bouncing'), 500);
+            }
+
+            // 3. Animate toggle labels
+            const labels = document.querySelectorAll('.toggle-label');
+            labels.forEach(label => {
+                label.classList.add('active');
+                setTimeout(() => label.classList.remove('active'), 400);
+            });
+
+            // 4. Add ripple effect from toggle button
+            const rect = btn.getBoundingClientRect();
+            const ripple = document.createElement('div');
+            ripple.classList.add('toggle-ripple');
+            ripple.style.left = (rect.left + rect.width / 2) + 'px';
+            ripple.style.top = (rect.top + rect.height / 2) + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+
+            // 5. Create floating particles
+            createToggleParticles(rect);
+
+            // 6. Add header shine effect
+            const header = document.querySelector('header');
+            header.classList.add('theme-changing');
+            setTimeout(() => header.classList.remove('theme-changing'), 800);
+
+            // 7. Add body color transition
+            document.body.classList.add('transitioning');
+            setTimeout(() => document.body.classList.remove('transitioning'), 800);
+
+            // 8. Pulse the entire header
+            header.style.filter = 'brightness(1.1)';
+            setTimeout(() => {
+                header.style.filter = 'brightness(1)';
+            }, 300);
         });
+
+        // Helper function to create floating particles
+        function createToggleParticles(rect) {
+            const particleCount = 8;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('toggle-particle');
+                
+                const angle = (i / particleCount) * Math.PI * 2;
+                const distance = 100;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                particle.style.left = (rect.left + rect.width / 2) + 'px';
+                particle.style.top = (rect.top + rect.height / 2) + 'px';
+                particle.style.width = '8px';
+                particle.style.height = '8px';
+                particle.style.borderRadius = '50%';
+                particle.style.background = `hsl(${Math.random() * 60 + 200}, 100%, 60%)`;
+                particle.style.setProperty('--tx', tx + 'px');
+                particle.style.setProperty('--ty', ty + 'px');
+                
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 800);
+            }
+        }
 
         // keyboard accessibility
         btn.addEventListener("keydown", (e) => {
