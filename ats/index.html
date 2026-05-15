@@ -310,6 +310,62 @@ select.ei2{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
 tr:hover .edit-inline-btn{opacity:1}
 .edit-inline-btn:hover{background:var(--light)}
 
+/* ===== DUPLICATE DETECTION ===== */
+.dup-banner{background:linear-gradient(135deg,rgba(220,38,38,.07),rgba(220,38,38,.03));border:1px solid rgba(220,38,38,.25);border-radius:12px;padding:13px 16px;margin-bottom:18px;display:none}
+.dup-banner.show{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dup-banner-icon{font-size:20px;flex-shrink:0}
+.dup-banner-text{flex:1;font-size:13px;color:#b91c1c;font-weight:500;line-height:1.5}
+.dup-banner-btn{background:#dc2626;border:none;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:700;color:#fff;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:opacity .15s;white-space:nowrap}
+.dup-banner-btn:hover{opacity:.88}
+.dup-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border:1px solid rgba(220,38,38,.2);border-left:3px solid #dc2626;border-radius:10px;margin-bottom:10px}
+.dup-item:last-child{margin-bottom:0}
+.dup-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.dup-info{flex:1;min-width:0}
+.dup-name{font-weight:700;font-size:14px;color:var(--pri);margin-bottom:3px}
+.dup-meta{font-size:12px;color:var(--sec);margin-bottom:5px}
+.dup-reason{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:#fee2e2;color:#b91c1c}
+.dup-actions{display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+.dup-keep{background:#dcfce7;border:1px solid #bbf7d0;color:#15803d;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s}
+.dup-keep:hover{background:#bbf7d0}
+.dup-remove{background:#fee2e2;border:1px solid #fecaca;color:#b91c1c;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s}
+.dup-remove:hover{background:#fecaca}
+.dup-score-bar{display:flex;align-items:center;gap:6px;margin-top:5px}
+.dup-score-label{font-size:10px;font-weight:700;color:var(--sec);white-space:nowrap}
+.dup-score-track{flex:1;height:4px;background:var(--light);border-radius:2px;overflow:hidden;max-width:120px}
+.dup-score-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#dc2626,#f97316)}
+.dup-group{background:var(--off);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.dup-group-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:13px;font-weight:700;color:var(--pri)}
+/* Row highlight for duplicates */
+tr.is-dup td:first-child::after{content:'⚠️ Dup';font-size:9px;font-weight:800;background:#fee2e2;color:#b91c1c;padding:1px 6px;border-radius:10px;margin-left:7px;vertical-align:middle}
+
+/* ===== BULK EMAIL ===== */
+.bulk-bar{background:linear-gradient(135deg,rgba(29,78,216,.08),rgba(29,78,216,.03));border:1px solid rgba(29,78,216,.25);border-radius:12px;padding:12px 16px;margin-bottom:18px;display:none;align-items:center;gap:10px;flex-wrap:wrap}
+.bulk-bar.show{display:flex}
+.bulk-bar-text{flex:1;font-size:13px;color:#1e40af;font-weight:600}
+.bulk-bar-actions{display:flex;gap:6px;align-items:center}
+.bulk-chk{width:16px;height:16px;accent-color:var(--amber);cursor:pointer;border-radius:3px;flex-shrink:0}
+thead th:first-child{padding-left:10px}
+.th-chk{width:32px;text-align:center;padding-left:10px!important}
+td.td-chk{text-align:center;padding-left:10px}
+
+/* Bulk email modal */
+.bulk-recipient{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--off);margin-bottom:7px;font-size:13px}
+.bulk-recipient:last-child{margin-bottom:0}
+.bulk-rec-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.bulk-rec-info{flex:1;min-width:0}
+.bulk-rec-name{font-weight:600;font-size:12px;color:var(--pri)}
+.bulk-rec-email{font-size:11px;color:var(--sec);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bulk-rec-remove{background:none;border:none;color:var(--mid);cursor:pointer;font-size:16px;padding:0 4px;transition:color .15s;line-height:1;flex-shrink:0}
+.bulk-rec-remove:hover{color:var(--err)}
+.bulk-progress-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;background:var(--off);margin-bottom:6px;font-size:12px}
+.bulk-prog-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.bulk-prog-name{flex:1;font-weight:500;color:var(--pri)}
+.bulk-prog-status{font-size:11px;font-weight:600}
+.bulk-prog-ok{color:var(--ok)}
+.bulk-prog-err{color:var(--err)}
+.bulk-prog-wait{color:var(--sec)}
+.bulk-prog-send{color:#1d4ed8}
+
 /* DB OPTIONS */
 .db-opts{display:flex;flex-direction:column;gap:10px}
 .db-opt{border:1px solid var(--bdr);border-radius:12px;padding:15px 16px;transition:all .15s;background:var(--white)}
@@ -361,7 +417,7 @@ tr:hover .edit-inline-btn{opacity:1}
       <button type="submit" class="btn-login">Sign In →</button>
     </form>
     <div class="l-err" id="l-err">Invalid username or password. Please try again.</div>
-    <div class="l-hint">Default: <strong></strong> / <strong></strong> — change in Settings</div>
+    <div class="l-hint">Default: <strong>admin</strong> / <strong>talent2024</strong> — change in Settings</div>
   </div>
 </div>
 
@@ -476,6 +532,20 @@ tr:hover .edit-inline-btn{opacity:1}
 
         <!-- CANDIDATES -->
         <div id="page-candidates" class="page">
+          <!-- Duplicate warning banner -->
+          <div class="dup-banner" id="dup-banner">
+            <div class="dup-banner-icon">⚠️</div>
+            <div class="dup-banner-text" id="dup-banner-text">Potential duplicate candidates detected.</div>
+            <button class="dup-banner-btn" onclick="navigate('duplicates')">Review Duplicates →</button>
+          </div>
+          <!-- Bulk email bar (shown when candidates are selected) -->
+          <div class="bulk-bar" id="bulk-bar">
+            <span class="bulk-bar-text" id="bulk-bar-text">0 candidates selected</span>
+            <div class="bulk-bar-actions">
+              <button class="btn btn-sm" style="background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;font-weight:700" onclick="openBulkEmail()">✉️ Bulk Email Selected</button>
+              <button class="btn btn-sm" onclick="clearSelection()">✕ Clear</button>
+            </div>
+          </div>
           <div class="tc">
             <div class="tb">
               <input type="text" class="si" id="search-inp" placeholder="Search name, title, skills, location...">
@@ -496,10 +566,14 @@ tr:hover .edit-inline-btn{opacity:1}
                 <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Export CSV
               </button>
+              <button class="btn btn-sm" id="find-dup-btn" onclick="runDuplicateDetectionInline()" title="Scan for duplicate candidates">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Find Duplicates
+              </button>
             </div>
             <div class="tw">
               <table>
-                <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Location</th><th>Job Title</th><th>SC Status</th><th>Notes</th><th>Actions</th></tr></thead>
+                <thead><tr><th class="th-chk"><input type="checkbox" class="bulk-chk" id="select-all-chk" title="Select all" onchange="toggleSelectAll(this.checked)"></th><th>Name</th><th>Email</th><th>Phone</th><th>Location</th><th>Job Title</th><th>SC Status</th><th>Notes</th><th>Actions</th></tr></thead>
                 <tbody id="cand-tbody"></tbody>
               </table>
             </div>
@@ -601,6 +675,27 @@ tr:hover .edit-inline-btn{opacity:1}
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DUPLICATES PAGE -->
+        <div id="page-duplicates" class="page">
+          <div class="info-box">
+            <strong>🔍 Duplicate Detection</strong> — TalentFlow scans your candidate database using fuzzy name matching, exact email/phone matching, and similarity scoring. Review each group and keep or remove duplicates.
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap">
+            <button class="btn btn-gold" id="run-dup-btn" onclick="runDuplicateDetection()">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Scan for Duplicates
+            </button>
+            <span class="ht" id="dup-scan-label"></span>
+          </div>
+          <div id="dup-results">
+            <div class="es">
+              <div class="ei">🔍</div>
+              <div class="et">No scan run yet</div>
+              <div class="ed">Click "Scan for Duplicates" to analyse your candidate database</div>
             </div>
           </div>
         </div>
@@ -1024,6 +1119,62 @@ tr:hover .edit-inline-btn{opacity:1}
           <svg width="13" height="13" viewBox="0 0 24 24" fill="white" style="vertical-align:middle;margin-right:4px"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Open in Outlook Web
         </button>
         <button class="btn btn-sm btn-gold" onclick="openEmailClient()" style="min-width:150px">🚀 Open Mail App</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BULK EMAIL MODAL -->
+<div class="mo" id="bulk-email-modal">
+  <div class="md" style="width:700px;max-height:92vh;overflow:hidden;display:flex;flex-direction:column">
+    <div class="md-hdr" style="flex-shrink:0">
+      <div>
+        <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--pri);letter-spacing:-.3px">✉️ Bulk Email — Submission Consent</div>
+        <div style="font-size:12px;color:var(--sec);margin-top:2px" id="bulk-email-count-label">0 recipients</div>
+      </div>
+      <button class="md-close" id="bulk-email-modal-close" aria-label="Close">×</button>
+    </div>
+    <div class="md-body" style="overflow-y:auto;padding:16px 22px 20px;flex:1">
+
+      <!-- Recipients list -->
+      <div style="margin-bottom:16px">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--sec);margin-bottom:8px">Recipients <span style="font-weight:400;color:var(--mid)">(click × to remove)</span></div>
+        <div id="bulk-recipients-list" style="max-height:160px;overflow-y:auto;border:1px solid var(--bdr);border-radius:10px;padding:8px"></div>
+      </div>
+
+      <!-- Email Subject -->
+      <div style="margin-bottom:12px">
+        <label class="set-l" style="font-size:10px;display:block;margin-bottom:6px">Email Subject</label>
+        <input class="set-i" id="be-subject" placeholder="Job Opportunity — Senior Developer | Submission Consent Required" style="margin-bottom:0;font-size:13px;width:100%">
+      </div>
+
+      <!-- Job Description -->
+      <div style="margin-bottom:14px">
+        <label class="set-l" style="font-size:10px;display:block;margin-bottom:6px">Job Description <span style="font-weight:400;color:var(--mid);text-transform:none;letter-spacing:0">(pasted into email body)</span></label>
+        <textarea id="be-jd" class="jdt" placeholder="Paste the full job description here — it will be included in each email after the opening paragraph…" style="min-height:130px"></textarea>
+      </div>
+
+      <!-- Email preview -->
+      <div style="margin-bottom:14px">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--sec);margin-bottom:7px">Email Preview <span style="font-weight:400;color:var(--mid);text-transform:none;letter-spacing:0">(first recipient — personalised per candidate)</span></div>
+        <div id="be-preview" style="background:var(--off);border:1px solid var(--bdr);border-radius:10px;padding:14px 16px;font-size:12px;color:var(--pri);white-space:pre-wrap;line-height:1.7;max-height:200px;overflow-y:auto;font-family:'Plus Jakarta Sans',sans-serif"></div>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+        <button class="btn btn-gold" id="be-send-btn" onclick="startBulkSend('outlook')">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2 11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send via Outlook Web
+        </button>
+        <button class="btn" onclick="startBulkSend('copy')">📋 Copy All to Clipboard</button>
+        <button class="btn" onclick="startBulkSend('mailto')">📨 Desktop Mail App</button>
+      </div>
+
+      <!-- Progress -->
+      <div id="bulk-send-progress" style="display:none">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--sec);margin-bottom:8px">Send Progress</div>
+        <div id="bulk-send-progress-list"></div>
+        <div id="bulk-send-summary" style="margin-top:10px;font-size:13px;font-weight:600;color:var(--ok)"></div>
       </div>
     </div>
   </div>
@@ -1725,6 +1876,7 @@ function navigate(pg) {
     candidates: ['Candidates', S.candidates.length + ' candidate' + (S.candidates.length !== 1 ? 's' : '') + ' in your pipeline'],
     upload:     ['Upload CVs', 'AI-powered CV parsing — extract candidate data automatically'],
     match:      ['JD Matching', 'Match candidates against a job description with AI scoring'],
+    duplicates: ['Duplicate Detection', 'Find and clean up duplicate candidate records'],
     settings:   ['Settings', 'Configure TalentFlow ATS']
   };
   var h = heads[pg] || [pg, ''];
@@ -1868,7 +2020,12 @@ function renderTable() {
     var notesPreview = latestNote
       ? '<div style="font-size:11px;color:var(--sec);margin-top:3px;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + esc(latestNote.text) + '">' + esc(latestNote.text.slice(0,55)) + (latestNote.text.length>55?'…':'') + '</div>'
       : '';
-    return '<tr onclick="openCand(\'' + c.id + '\')">' +
+    var isDup = S._dupIds && S._dupIds.has(c.id);
+    var isChecked = _selectedCandIds.has(c.id);
+    return '<tr onclick="openCand(\'' + c.id + '\')" class="' + (isDup ? 'is-dup' : '') + '">' +
+      '<td class="td-chk" onclick="event.stopPropagation()">' +
+        '<input type="checkbox" class="bulk-chk row-chk" data-id="'+c.id+'" ' + (isChecked ? 'checked' : '') + ' onchange="onRowCheckChange(\''+c.id+'\',this.checked)">' +
+      '</td>' +
       '<td>' +
         '<div style="display:flex;align-items:center;gap:6px">' +
           '<div class="cn">' + esc(c.name||'—') + '</div>' +
@@ -2407,6 +2564,7 @@ async function processFile(f, iid, rateNotice) {
     }
     st.textContent = 'Added: ' + addedName + sbStatus;
     st.style.color = dbSyncOk || !SB.url ? 'var(--ok)' : '#b45309';
+    autoScanDuplicates(); // silently check for duplicates after each upload
     return true;
   } catch(e) {
     ic.className = 'pic err';
@@ -3303,7 +3461,562 @@ function legacyCopy(text) {
   catch(e) { showToast('Select all text in preview and copy manually', 't-warn'); }
   document.body.removeChild(ta);
 }
-// ===== UTILS =====
+// ================================================================
+// ===== DUPLICATE DETECTION =====
+// ================================================================
+var _dupGroups = []; // [{ids: [...], reason: '...', score: N}]
+var _selectedCandIds = new Set();
+
+function normaliseName(n) {
+  return (n || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+}
+function normaliseEmail(e) {
+  return (e || '').toLowerCase().trim();
+}
+function normalisePhone(p) {
+  return (p || '').replace(/\D/g, '').slice(-10); // last 10 digits
+}
+
+// Levenshtein similarity 0-1
+function strSimilarity(a, b) {
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  var la = a.length, lb = b.length;
+  var maxLen = Math.max(la, lb);
+  if (maxLen === 0) return 1;
+  // Matrix
+  var dp = [];
+  for (var i = 0; i <= la; i++) {
+    dp[i] = [i];
+    for (var j = 1; j <= lb; j++) {
+      if (i === 0) { dp[i][j] = j; continue; }
+      var cost = a[i-1] === b[j-1] ? 0 : 1;
+      dp[i][j] = Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost);
+    }
+  }
+  return 1 - dp[la][lb] / maxLen;
+}
+
+// Token sort ratio — splits names into words, sorts, compares
+function nameSimilarity(a, b) {
+  var wa = normaliseName(a).split(' ').sort().join(' ');
+  var wb = normaliseName(b).split(' ').sort().join(' ');
+  return strSimilarity(wa, wb);
+}
+
+function runDuplicateDetection() {
+  var btn = document.getElementById('run-dup-btn');
+  var lbl = document.getElementById('dup-scan-label');
+  var res = document.getElementById('dup-results');
+  if (btn) { btn.disabled = true; btn.innerHTML = '⏳ Scanning…'; }
+  if (lbl) lbl.textContent = '';
+
+  var cands = S.candidates;
+  if (!cands.length) {
+    if (res) res.innerHTML = '<div class="es"><div class="ei">📭</div><div class="et">No candidates</div><div class="ed">Upload some CVs first</div></div>';
+    if (btn) { btn.disabled = false; btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Scan for Duplicates'; }
+    return;
+  }
+
+  // Run in a timeout so browser can repaint
+  setTimeout(function() {
+    _dupGroups = findDuplicates(cands);
+    renderDuplicates(_dupGroups);
+    updateDupBanner(_dupGroups);
+
+    if (lbl) lbl.textContent = _dupGroups.length
+      ? _dupGroups.length + ' group' + (_dupGroups.length !== 1 ? 's' : '') + ' found'
+      : 'No duplicates found ✓';
+    if (btn) { btn.disabled = false; btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Scan for Duplicates'; }
+  }, 50);
+}
+
+function findDuplicates(cands) {
+  var groups = [];
+  var grouped = new Set();
+
+  for (var i = 0; i < cands.length; i++) {
+    if (grouped.has(cands[i].id)) continue;
+    var group = [cands[i].id];
+    var reasons = [];
+
+    for (var j = i + 1; j < cands.length; j++) {
+      if (grouped.has(cands[j].id)) continue;
+      var a = cands[i], b = cands[j];
+      var matchReason = null;
+      var score = 0;
+
+      // 1. Exact email match (strongest signal)
+      var ae = normaliseEmail(a.email), be = normaliseEmail(b.email);
+      if (ae && be && ae === be) {
+        matchReason = 'Exact email match';
+        score = 98;
+      }
+
+      // 2. Exact phone match
+      if (!matchReason) {
+        var ap = normalisePhone(a.phone), bp = normalisePhone(b.phone);
+        if (ap && bp && ap.length >= 7 && ap === bp) {
+          matchReason = 'Exact phone match';
+          score = 95;
+        }
+      }
+
+      // 3. Very similar name (≥88%) + same email domain
+      if (!matchReason) {
+        var ns = nameSimilarity(a.name, b.name);
+        if (ns >= 0.88) {
+          score = Math.round(ns * 100);
+          var aDomain = ae.split('@')[1] || '', bDomain = be.split('@')[1] || '';
+          var sameEmailDomain = aDomain && bDomain && aDomain === bDomain;
+          if (ns >= 0.95) {
+            matchReason = 'Very similar name (' + score + '% match)';
+          } else if (sameEmailDomain) {
+            matchReason = 'Similar name + same email domain (' + score + '%)';
+          }
+        }
+      }
+
+      // 4. Same name + same location (different email — could be a re-upload)
+      if (!matchReason) {
+        var ns2 = nameSimilarity(a.name, b.name);
+        var aloc = normaliseName(a.location), bloc = normaliseName(b.location);
+        if (ns2 >= 0.85 && aloc && bloc && aloc === bloc) {
+          score = Math.round(ns2 * 90);
+          matchReason = 'Similar name + same location (' + score + '%)';
+        }
+      }
+
+      if (matchReason) {
+        if (group.length === 1) reasons.push(matchReason);
+        group.push(b.id);
+        grouped.add(b.id);
+      }
+    }
+
+    if (group.length > 1) {
+      grouped.add(cands[i].id);
+      groups.push({ ids: group, reason: reasons[0] || 'Similar candidates', score: score });
+    }
+  }
+  return groups;
+}
+
+function renderDuplicates(groups) {
+  var res = document.getElementById('dup-results');
+  if (!res) return;
+
+  if (!groups.length) {
+    res.innerHTML = '<div class="es"><div class="ei">✅</div><div class="et">No duplicates found</div><div class="ed">Your candidate database looks clean!</div></div>';
+    return;
+  }
+
+  res.innerHTML = groups.map(function(g, gi) {
+    var candCards = g.ids.map(function(id) {
+      var c = S.candidates.find(function(x){ return x.id === id; });
+      if (!c) return '';
+      var ini = (c.name||'?').split(' ').map(function(w){ return w[0]||''; }).join('').toUpperCase().slice(0,2)||'?';
+      var col = aCol(c.name);
+      var added = new Date(c.addedAt).toLocaleDateString('en-GB');
+      return '<div class="dup-item">' +
+        '<div class="dup-avatar" style="background:'+col+'">'+esc(ini)+'</div>' +
+        '<div class="dup-info">' +
+          '<div class="dup-name">'+esc(c.name||'—')+'</div>' +
+          '<div class="dup-meta">'+esc(c.email||'No email')+' · '+esc(c.phone||'No phone')+' · '+esc(c.location||'—')+'</div>' +
+          '<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">' +
+            scBadge(c.scStatus) +
+            '<span style="font-size:11px;color:var(--mid)">Added: '+added+'</span>' +
+            '<span style="font-size:11px;color:var(--mid)">'+esc(c.sourceFile||'')+'</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="dup-actions">' +
+          '<button class="dup-keep" onclick="keepCandidate(\''+id+'\','+gi+')">✓ Keep</button>' +
+          '<button class="dup-remove" onclick="removeCandidate(\''+id+'\','+gi+')">🗑 Remove</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    return '<div class="dup-group">' +
+      '<div class="dup-group-hdr">' +
+        '<span class="dup-reason">'+esc(g.reason)+'</span>' +
+        '<span style="font-size:11px;font-weight:400;color:var(--sec)">'+g.ids.length+' records · similarity '+g.score+'%</span>' +
+        '<button class="btn btn-sm" style="margin-left:auto;font-size:11px" onclick="keepNewest('+gi+')">Keep Newest, Remove Rest</button>' +
+      '</div>' +
+      candCards +
+    '</div>';
+  }).join('');
+}
+
+function updateDupBanner(groups) {
+  var banner = document.getElementById('dup-banner');
+  var bannerText = document.getElementById('dup-banner-text');
+  var sbDupCount = document.getElementById('sb-dup-count');
+
+  // Also mark rows in candidates table
+  var dupIds = new Set();
+  groups.forEach(function(g) { g.ids.forEach(function(id){ dupIds.add(id); }); });
+
+  if (groups.length) {
+    var total = groups.reduce(function(acc, g){ return acc + g.ids.length; }, 0);
+    if (banner) banner.classList.add('show');
+    if (bannerText) bannerText.textContent = total + ' potential duplicate records found across ' + groups.length + ' group' + (groups.length !== 1 ? 's' : '') + '. Review and clean up your database.';
+    if (sbDupCount) { sbDupCount.style.display = 'inline-flex'; sbDupCount.textContent = groups.length; }
+  } else {
+    if (banner) banner.classList.remove('show');
+    if (sbDupCount) sbDupCount.style.display = 'none';
+  }
+
+  // Mark dup rows visually in the candidates table
+  S._dupIds = dupIds;
+  if (S.page === 'candidates') renderTable();
+}
+
+function keepCandidate(id, groupIdx) {
+  var g = _dupGroups[groupIdx];
+  if (!g) return;
+  // Remove all others in this group
+  var toRemove = g.ids.filter(function(x){ return x !== id; });
+  if (!confirm('Keep this candidate and delete ' + toRemove.length + ' other record(s) in this group?')) return;
+  toRemove.forEach(function(rid) {
+    S.candidates = S.candidates.filter(function(c){ return c.id !== rid; });
+  });
+  save();
+  _dupGroups.splice(groupIdx, 1);
+  updateSidebar();
+  updateDupBanner(_dupGroups);
+  renderDuplicates(_dupGroups);
+  showToast('✅ Kept 1, removed ' + toRemove.length + ' duplicate(s)', 't-ok');
+}
+
+function removeCandidate(id, groupIdx) {
+  var g = _dupGroups[groupIdx];
+  if (!g) return;
+  if (!confirm('Delete this candidate record? This cannot be undone.')) return;
+  S.candidates = S.candidates.filter(function(c){ return c.id !== id; });
+  save();
+  // Update group
+  g.ids = g.ids.filter(function(x){ return x !== id; });
+  if (g.ids.length < 2) _dupGroups.splice(groupIdx, 1);
+  updateSidebar();
+  updateDupBanner(_dupGroups);
+  renderDuplicates(_dupGroups);
+  showToast('Candidate removed', 't-ok');
+}
+
+function keepNewest(groupIdx) {
+  var g = _dupGroups[groupIdx];
+  if (!g) return;
+  var cands = g.ids.map(function(id){ return S.candidates.find(function(c){ return c.id === id; }); }).filter(Boolean);
+  cands.sort(function(a, b){ return new Date(b.addedAt) - new Date(a.addedAt); });
+  if (!cands.length) return;
+  var newest = cands[0];
+  var toRemove = g.ids.filter(function(x){ return x !== newest.id; });
+  if (!confirm('Keep newest ("' + newest.name + '") and delete ' + toRemove.length + ' older record(s)?')) return;
+  toRemove.forEach(function(rid) {
+    S.candidates = S.candidates.filter(function(c){ return c.id !== rid; });
+  });
+  save();
+  _dupGroups.splice(groupIdx, 1);
+  updateSidebar();
+  updateDupBanner(_dupGroups);
+  renderDuplicates(_dupGroups);
+  showToast('✅ Kept newest, removed ' + toRemove.length + ' duplicate(s)', 't-ok');
+}
+
+// Auto-scan for duplicates after any new CV is added (run silently after 2s)
+function autoScanDuplicates() {
+  if (S.candidates.length < 2) return;
+  setTimeout(function() {
+    var found = findDuplicates(S.candidates);
+    _dupGroups = found;
+    updateDupBanner(found);
+  }, 2000);
+}
+
+// ================================================================
+// ===== BULK EMAIL =====
+// ================================================================
+var _bulkRecipients = []; // array of candidate ids
+
+function toggleSelectAll(checked) {
+  var chks = document.querySelectorAll('.row-chk');
+  chks.forEach(function(chk) { chk.checked = checked; });
+  _selectedCandIds = new Set();
+  if (checked) {
+    chks.forEach(function(chk) { if (chk.dataset.id) _selectedCandIds.add(chk.dataset.id); });
+  }
+  updateBulkBar();
+}
+
+function onRowCheckChange(id, checked) {
+  if (checked) { _selectedCandIds.add(id); }
+  else { _selectedCandIds.delete(id); }
+  // Update select-all state
+  var allChks = document.querySelectorAll('.row-chk');
+  var selectAllChk = document.getElementById('select-all-chk');
+  if (selectAllChk && allChks.length) {
+    var checkedCount = document.querySelectorAll('.row-chk:checked').length;
+    selectAllChk.indeterminate = checkedCount > 0 && checkedCount < allChks.length;
+    selectAllChk.checked = checkedCount === allChks.length;
+  }
+  updateBulkBar();
+}
+
+function updateBulkBar() {
+  var bar = document.getElementById('bulk-bar');
+  var txt = document.getElementById('bulk-bar-text');
+  var n = _selectedCandIds.size;
+  if (n > 0) {
+    if (bar) bar.classList.add('show');
+    if (txt) txt.textContent = n + ' candidate' + (n !== 1 ? 's' : '') + ' selected';
+  } else {
+    if (bar) bar.classList.remove('show');
+  }
+}
+
+function clearSelection() {
+  _selectedCandIds = new Set();
+  document.querySelectorAll('.row-chk').forEach(function(chk){ chk.checked = false; });
+  var selectAllChk = document.getElementById('select-all-chk');
+  if (selectAllChk) { selectAllChk.checked = false; selectAllChk.indeterminate = false; }
+  updateBulkBar();
+}
+
+function openBulkEmail() {
+  if (_selectedCandIds.size === 0) { showToast('No candidates selected', 't-warn'); return; }
+  _bulkRecipients = Array.from(_selectedCandIds);
+
+  var countEl    = document.getElementById('bulk-email-count-label');
+  var progressEl = document.getElementById('bulk-send-progress');
+  var summaryEl  = document.getElementById('bulk-send-summary');
+  if (progressEl) progressEl.style.display = 'none';
+  if (summaryEl)  summaryEl.textContent = '';
+  if (countEl)    countEl.textContent = _bulkRecipients.length + ' recipient' + (_bulkRecipients.length !== 1 ? 's' : '');
+
+  // Default subject from first candidate's job title
+  var firstCand = S.candidates.find(function(c){ return c.id === _bulkRecipients[0]; });
+  var subjEl = document.getElementById('be-subject');
+  if (subjEl && firstCand) subjEl.value = 'Job Opportunity — ' + (firstCand.jobTitle || '[Role]') + ' | Submission Consent Required';
+
+  // Clear JD
+  var jdEl = document.getElementById('be-jd');
+  if (jdEl) jdEl.value = '';
+
+  renderBulkRecipients();
+  updateBulkPreview();
+
+  // Wire live preview on JD change
+  if (jdEl) {
+    jdEl.oninput = updateBulkPreview;
+  }
+
+  openModal('bulk-email-modal');
+}
+
+function renderBulkRecipients() {
+  var listEl = document.getElementById('bulk-recipients-list');
+  var countEl = document.getElementById('bulk-email-count-label');
+  if (!listEl) return;
+
+  if (!_bulkRecipients.length) {
+    listEl.innerHTML = '<div style="padding:12px;text-align:center;color:var(--mid);font-size:13px">No recipients — all removed</div>';
+    if (countEl) countEl.textContent = '0 recipients';
+    return;
+  }
+
+  if (countEl) countEl.textContent = _bulkRecipients.length + ' recipient' + (_bulkRecipients.length !== 1 ? 's' : '');
+
+  listEl.innerHTML = _bulkRecipients.map(function(id) {
+    var c = S.candidates.find(function(x){ return x.id === id; });
+    if (!c) return '';
+    var ini = (c.name||'?').split(' ').map(function(w){ return w[0]||''; }).join('').toUpperCase().slice(0,2)||'?';
+    return '<div class="bulk-recipient" id="br-'+id+'">' +
+      '<div class="bulk-rec-avatar" style="background:'+aCol(c.name)+'">'+esc(ini)+'</div>' +
+      '<div class="bulk-rec-info">' +
+        '<div class="bulk-rec-name">'+esc(c.name||'—')+'</div>' +
+        '<div class="bulk-rec-email">'+(c.email ? esc(c.email) : '<span style="color:#dc2626">No email</span>')+'</div>' +
+      '</div>' +
+      scBadge(c.scStatus) +
+      '<button class="bulk-rec-remove" onclick="removeBulkRecipient(\''+id+'\')" title="Remove">×</button>' +
+    '</div>';
+  }).filter(Boolean).join('');
+}
+
+function removeBulkRecipient(id) {
+  _bulkRecipients = _bulkRecipients.filter(function(x){ return x !== id; });
+  renderBulkRecipients();
+  updateBulkPreview();
+}
+
+function buildBulkEmailBody(c, jd) {
+  var candName  = c.name || '[Candidate Name]';
+  var firstName = candName.split(' ')[0] || candName;
+  var jdBlock   = (jd || '').trim();
+
+  var lines = [
+    'Hello ' + firstName + ',',
+    '',
+    'My name is ' + SENDER_NAME + ', and I am writing to you on behalf of ' + SENDER_COMPANY + '. Please go through the job description and review all your details shared in this email. Kindly confirm your consent for ' + SENDER_COMPANY + ' to represent you for this job opportunity and submit your profile to the client.',
+    ''
+  ];
+
+  if (jdBlock) {
+    lines.push(jdBlock);
+    lines.push('');
+  }
+
+  lines.push(
+    '',
+    'Thanks,',
+    SENDER_NAME + ',',
+    SENDER_TITLE + ',',
+    SENDER_COMPANY + ',',
+    SENDER_EMAIL
+  );
+
+  return lines.join('\n');
+}
+
+function updateBulkPreview() {
+  var previewEl = document.getElementById('be-preview');
+  if (!previewEl) return;
+  if (!_bulkRecipients.length) { previewEl.textContent = 'Add recipients to see preview.'; return; }
+  var firstId = _bulkRecipients[0];
+  var c = S.candidates.find(function(x){ return x.id === firstId; });
+  if (!c) { previewEl.textContent = ''; return; }
+  var jd = (document.getElementById('be-jd') || {}).value || '';
+  previewEl.textContent = buildBulkEmailBody(c, jd);
+}
+
+// Inline duplicate scan — shows a modal instead of navigating away
+function runDuplicateDetectionInline() {
+  var btn = document.getElementById('find-dup-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Scanning…'; }
+
+  setTimeout(function() {
+    _dupGroups = findDuplicates(S.candidates);
+    updateDupBanner(_dupGroups);
+
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Find Duplicates';
+    }
+
+    if (!_dupGroups.length) {
+      showToast('✅ No duplicates found — database is clean!', 't-ok');
+      return;
+    }
+
+    // Show results in a toast + the banner; navigate to duplicates page for full view
+    var total = _dupGroups.reduce(function(acc, g){ return acc + g.ids.length; }, 0);
+    showToast('⚠️ Found ' + total + ' records in ' + _dupGroups.length + ' duplicate group(s)', 't-warn');
+    // Open duplicates page with results pre-rendered
+    renderDuplicates(_dupGroups);
+    navigate('duplicates');
+  }, 60);
+}
+
+async function startBulkSend(mode) {
+  var recipients = _bulkRecipients.filter(function(id) {
+    var c = S.candidates.find(function(x){ return x.id === id; });
+    return c && (mode === 'copy' || c.email);
+  });
+
+  if (!recipients.length) {
+    showToast('No recipients with email addresses found', 't-warn');
+    return;
+  }
+
+  var subject = ((document.getElementById('be-subject') || {}).value || '').trim() || 'Job Opportunity | Submission Consent Required';
+  var jd      = ((document.getElementById('be-jd')      || {}).value || '').trim();
+
+  var progressEl   = document.getElementById('bulk-send-progress');
+  var progressList = document.getElementById('bulk-send-progress-list');
+  var summaryEl    = document.getElementById('bulk-send-summary');
+  var sendBtn      = document.getElementById('be-send-btn');
+
+  if (progressEl) progressEl.style.display = 'block';
+  if (summaryEl)  summaryEl.textContent = '';
+  if (sendBtn)    sendBtn.disabled = true;
+
+  if (mode === 'copy') {
+    var allText = recipients.map(function(id) {
+      var c = S.candidates.find(function(x){ return x.id === id; });
+      if (!c) return '';
+      var body = buildBulkEmailBody(c, jd);
+      return '=== TO: ' + (c.email || 'NO EMAIL') + ' ===\nSUBJECT: ' + subject + '\n\n' + body + '\n\n' + '─'.repeat(60) + '\n\n';
+    }).join('');
+
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(allText);
+        if (progressList) progressList.innerHTML = recipients.map(function(id) {
+          var c = S.candidates.find(function(x){ return x.id === id; });
+          return '<div class="bulk-progress-item"><div class="bulk-prog-icon" style="background:#dcfce7">✓</div><div class="bulk-prog-name">'+esc(c?c.name:'—')+'</div><span class="bulk-prog-status bulk-prog-ok">Copied</span></div>';
+        }).join('');
+        if (summaryEl) summaryEl.textContent = '✅ All ' + recipients.length + ' emails copied to clipboard. Open Outlook → New Email → Paste.';
+        showToast('✅ ' + recipients.length + ' emails copied to clipboard', 't-ok');
+      } catch(e) {
+        showToast('Copy failed — try another send method', 't-err');
+      }
+    }
+    if (sendBtn) sendBtn.disabled = false;
+    return;
+  }
+
+  // Outlook or mailto: open each one with a small delay
+  if (progressList) progressList.innerHTML = recipients.map(function(id) {
+    var c = S.candidates.find(function(x){ return x.id === id; });
+    return '<div class="bulk-progress-item" id="bpp-'+id+'"><div class="bulk-prog-icon" style="background:var(--light)">⏳</div><div class="bulk-prog-name">'+esc(c?c.name:'—')+'</div><span class="bulk-prog-status bulk-prog-wait" id="bps-'+id+'">Waiting…</span></div>';
+  }).join('');
+
+  var sent = 0;
+  for (var i = 0; i < recipients.length; i++) {
+    var id = recipients[i];
+    var c = S.candidates.find(function(x){ return x.id === id; });
+    if (!c || !c.email) {
+      var statusEl2 = document.getElementById('bps-'+id);
+      var iconEl2 = document.querySelector('#bpp-'+id+' .bulk-prog-icon');
+      if (statusEl2) { statusEl2.textContent = 'No email — skipped'; statusEl2.className = 'bulk-prog-status bulk-prog-err'; }
+      if (iconEl2)   { iconEl2.style.background = '#fee2e2'; iconEl2.textContent = '✗'; }
+      continue;
+    }
+
+    var statusEl = document.getElementById('bps-'+id);
+    var iconEl = document.querySelector('#bpp-'+id+' .bulk-prog-icon');
+    if (statusEl) { statusEl.textContent = 'Sending…'; statusEl.className = 'bulk-prog-status bulk-prog-send'; }
+    if (iconEl)   { iconEl.style.background = '#dbeafe'; iconEl.textContent = '→'; }
+
+    var body = buildBulkEmailBody(c, jd);
+    var to  = encodeURIComponent(c.email);
+    var sub = encodeURIComponent(subject);
+    var bod = encodeURIComponent(body);
+
+    try {
+      if (mode === 'outlook') {
+        var url = 'https://outlook.office.com/mail/deeplink/compose?to=' + to + '&subject=' + sub + '&body=' + bod;
+        window.open(url, '_blank', 'noopener');
+      } else {
+        window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + encodeURIComponent(body.replace(/\n/g, '\r\n'));
+      }
+      sent++;
+      if (statusEl) { statusEl.textContent = 'Opened ✓'; statusEl.className = 'bulk-prog-status bulk-prog-ok'; }
+      if (iconEl)   { iconEl.style.background = '#dcfce7'; iconEl.textContent = '✓'; }
+    } catch(e) {
+      if (statusEl) { statusEl.textContent = 'Failed'; statusEl.className = 'bulk-prog-status bulk-prog-err'; }
+      if (iconEl)   { iconEl.style.background = '#fee2e2'; iconEl.textContent = '✗'; }
+    }
+
+    // Small delay between windows to avoid browser popup blocking
+    if (i < recipients.length - 1) await sleep(800);
+  }
+
+  if (summaryEl) summaryEl.textContent = '✅ Opened ' + sent + ' of ' + recipients.length + ' emails. Check your browser for popup windows.';
+  if (sendBtn) sendBtn.disabled = false;
+  showToast('✅ ' + sent + ' email windows opened', 't-ok');
+}
+
+// ================================================================
 function scBadge(s) {
   var m = {'SC Cleared':'b-sc','DV Cleared':'b-dv','CTC':'b-ctc','SC Applied':'b-app','None':'b-none'};
   return '<span class="badge ' + (m[s] || 'b-none') + '">' + (s || 'None') + '</span>';
@@ -3353,6 +4066,7 @@ function showApp(u) {
   updateSidebar();
   navigate('dashboard');
   preloadCVsFromIDB(); // restore CV blobs so download buttons work
+  autoScanDuplicates(); // quietly scan for duplicates on load
   // Sync from Supabase in background after 1.5s — checks schema first
   if (SB.url && SB.key) {
     setTimeout(function(){ checkSchemaAndLoad(); }, 1500);
@@ -3450,6 +4164,12 @@ function bindEvents() {
   var ni = document.getElementById('notes-input');
   if (ni) ni.addEventListener('keydown', function(e){ if ((e.ctrlKey||e.metaKey) && e.key==='Enter'){ e.preventDefault(); addNote(); } });
 
+  // Bulk email modal close
+  var beMoClose = document.getElementById('bulk-email-modal-close');
+  var bulkMo    = document.getElementById('bulk-email-modal');
+  if (beMoClose) beMoClose.addEventListener('click', function(){ closeModal('bulk-email-modal'); });
+  if (bulkMo)    bulkMo.addEventListener('click', function(e){ if (e.target === bulkMo) closeModal('bulk-email-modal'); });
+
   // Match button
   var mb = document.getElementById('match-btn');
   if (mb) mb.addEventListener('click', runMatch);
@@ -3490,4 +4210,3 @@ if (document.readyState === 'loading') {
 </script>
 </body>
 </html>
-
